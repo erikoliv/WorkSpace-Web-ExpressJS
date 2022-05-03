@@ -23,7 +23,7 @@ const { Alert } = require("bootstrap")
 
 async function consultar(ativo) {
     // Select no banco
-    fetch(`http://127.0.0.1:3000/ativo/${ativo}`)
+    fetch(`http://localhost:3000/ativo/${ativo}`)
         .then(response => {
             response.json()
                 .then(data => {

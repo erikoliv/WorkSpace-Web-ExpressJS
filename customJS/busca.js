@@ -21,7 +21,7 @@ function consulta() {
     if (!(valor.length == 0)) {
         // table.destroy()
         // table.draw()
-        fetch(`http://127.0.0.1:3000/count/${valor}`)
+        fetch(`http://localhost:3000/count/${valor}`)
             .then(response => {
                 response.json()
                     .then(data => {
@@ -45,7 +45,7 @@ function consulta() {
                                         var assetData = table.rows({ selected: true }).data()
                                         var data = assetData[0]
                                         localStorage.setItem("storageName", data[0])
-                                        window.open("/consulta/consulta.html", "", "popup")
+                                        window.open("/busca", "", "popup")
                                     },
                                     // extend: 'print',
                                     // text: 'Print all (not just selected)',
@@ -72,7 +72,7 @@ function consulta() {
                                 if (selectedMenu.text() == "Abrir") {
                                     var asset = table.row(invokedOn).data();
                                     localStorage.setItem("storageName", asset[0])
-                                    window.open("/consulta/consulta.html", "", "popup")
+                                    window.open("/busca", "", "popup")
                                 };
                             }
                         });
@@ -80,7 +80,7 @@ function consulta() {
                         $('#assetTable tbody').on('dblclick', 'tr', function () {
                             var asset = table.row(this).data();
                             localStorage.setItem("storageName", asset[0])
-                            window.open("/consulta/consulta.html", "", "popup")
+                            window.open("/busca", "", "popup")
                         });
                     })
             });

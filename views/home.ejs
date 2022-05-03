@@ -11,7 +11,7 @@
 
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="home.css">
-  
+
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -30,71 +30,76 @@
 </head>
 
 <body>
-  
+
   <%- include ("./partials/sidebar.ejs") %>
 
-  <div class="container py-3 mt-5">
-    <header>
+    <div class="container py-3 mt-5">
+      <header>
 
-      <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-        <h1 class="display-4 fw-normal">WorkSpace</h1>
-      </div>
-    </header>
-
-    <main>
-      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-        <form action="/cadastro" method="post">
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm border-primary">
-              <div class="card-header py-3 text-white bg-primary border-primary">
-                <h4 class="my-0 fw-normal">Casdastro</h4>
-              </div>
-              <div class="card-body px-4">
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>Cadastre novos itens</li>
-                </ul>
-                <input type="submit" value="Cadastrar" class="w-100 btn btn-lg btn-primary">
-                <!-- <a href="/cadastro/cadastro.html" type="button" class="w-100 btn btn-lg btn-primary">Acessar</a> -->
-              </div>
-            </div>
-          </div>
-        </form>
-        <div class="col">
-          <div class="card mb-4 rounded-3 shadow-sm border-primary">
-            <div class="card-header py-3 text-white bg-primary border-primary">
-              <h4 class="my-0 fw-normal">Consulta</h4>
-            </div>
-            <div class="card-body">
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>Consulte e atualize registros</li>
-              </ul>
-              <a href="/busca/busca.html" type="button" class="w-100 btn btn-lg btn-primary">Acessar</a>
-
-            </div>
-          </div>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-normal">WorkSpace</h1>
         </div>
-        <div class="col">
-          <div class="card mb-4 rounded-3 shadow-sm border-primary">
-            <div class="card-header py-3 text-white bg-primary border-primary">
-              <h4 class="my-0 fw-normal">Relatórios</h4>
+      </header>
+
+      <main>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <form action="/cadastro" method="post">
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                <div class="card-header py-3 text-white bg-primary border-primary">
+                  <h4 class="my-0 fw-normal">Casdastro</h4>
+                </div>
+                <div class="card-body px-4">
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Cadastre novos itens</li>
+                  </ul>
+                  <input type="submit" value="Cadastrar" class="w-100 btn btn-lg btn-primary">
+                  <!-- <a href="/cadastro/cadastro.html" type="button" class="w-100 btn btn-lg btn-primary">Acessar</a> -->
+                </div>
+              </div>
             </div>
-            <div class="card-body">
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>Consolide informações para rateio</li>
-              </ul>
-              <button type="button" class="w-100 btn btn-lg btn-primary">Acessar</button>
+          </form>
+          <form action="/consulta" method="post">
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                <div class="card-header py-3 text-white bg-primary border-primary">
+                  <h4 class="my-0 fw-normal">Consulta</h4>
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Consulte e atualize registros</li>
+                  </ul>
+                  <input type="submit" value="Acessar" class="w-100 btn btn-lg btn-primary">
+                  <!-- <a href="/busca/busca.html" type="button" class="w-100 btn btn-lg btn-primary">Acessar</a> -->
+                </div>
+              </div>
             </div>
-          </div>
+          </form>
+          <form action="/consulta" method="post">
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                <div class="card-header py-3 text-white bg-primary border-primary">
+                  <h4 class="my-0 fw-normal">Relatórios</h4>
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Consolide informações para rateio</li>
+                  </ul>
+                  <input type="submit" value="Acessar" class="w-100 btn btn-lg btn-primary">
+                  <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Acessar</button> -->
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
-      </div>
-    </main>
-  </div>
+      </main>
+    </div>
 
-  <!-- JQuery core CSS -->
-  <script src="./js/jquery.min.js"></script>
+    <!-- JQuery core CSS -->
+    <script src="./js/jquery.min.js"></script>
 
-  <!-- Bootstrap core JS -->
-  <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JS -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
