@@ -56,7 +56,7 @@ app.post('/auth', function (request, response) {
 				// Authenticate the user
 				request.session.loggedin = true;
 				request.session.username = username;
-				// Redirect to home page
+				// Redirect to home page				
 				response.redirect('/home');
 			} else {
 				response.send('Incorrect Username and/or Password!');
@@ -83,7 +83,7 @@ app.get('/home', function (request, response) {
 });
 
 // http://localhost:3000/cadastro
-app.post('/cadastro', function (request, response) {
+app.get('/cadastro', function (request, response) {
 	// If the user is loggedin
 	if (request.session.loggedin) {
 		// Output username
@@ -96,7 +96,7 @@ app.post('/cadastro', function (request, response) {
 });
 
 // http://localhost:3000/consulta
-app.post('/consulta', function (request, response) {
+app.get('/consulta', function (request, response) {
 	// If the user is loggedin
 	if (request.session.loggedin) {
 		// Output username
@@ -109,11 +109,12 @@ app.post('/consulta', function (request, response) {
 });
 
 // http://localhost:3000/relatorios
-app.post('/relatorios', function (request, response) {
+app.get('/relatorios', function (request, response) {
 	// If the user is loggedin
 	if (request.session.loggedin) {
 		// Output username
-		response.render('relatorios');
+		response.send("To Be Done")
+		// response.render('relatorios');
 	} else {
 		// Not logged in
 		response.send('Please login to view this page!');
