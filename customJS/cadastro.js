@@ -36,7 +36,7 @@ fetch(`http://localhost:3000/q/tabPreco`)
             })
     })
 
-    // var classe = document.getElementById('classe-select')
+// var classe = document.getElementById('classe-select')
 // classe.addEventListener("change", function () {
 //     fetch("http://localhost:3000/modelo", {
 //         method: "POST",

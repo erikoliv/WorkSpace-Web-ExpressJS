@@ -59,40 +59,29 @@ app.post('/auth', function (request, response) {
 				// Redirect to home page				
 				response.redirect('/home');
 			} else {
-				response.send('Incorrect Username and/or Password!');
+				response.send('Incorrect Username and/or Password.');
 			}
 			response.end();
 		});
 	} else {
-		response.send('Please enter Username and Password!');
+		response.send('Please enter Username and Password.');
 		response.end();
 	}
 });
 
+//MIDDLEWARE
+const verifyIfAuthenticated = (req, res, next) => {
+	return req.session.loggedin ? next() : res.send('Please, login to view this page.');
+}
+
 // http://localhost:3000/home
-app.get('/home', function (request, response) {
-	// If the user is loggedin
-	if (request.session.loggedin) {
-		// Render homepage
-		response.render('home');
-	} else {
-		// Not logged in
-		response.send('Please login to view this page!');
-	}
-	response.end();
+app.get('/home', verifyIfAuthenticated, function (request, response) {
+	return response.render('home');
 });
 
 // http://localhost:3000/cadastro
-app.get('/cadastro', function (request, response) {
-	// If the user is loggedin
-	if (request.session.loggedin) {
-		// Output username
-		response.render('cadastro');
-	} else {
-		// Not logged in
-		response.send('Please login to view this page!');
-	}
-	response.end();
+app.get('/cadastro', verifyIfAuthenticated, function (request, response) {
+	return response.render('cadastro');
 });
 
 // http://localhost:3000/consulta
@@ -122,7 +111,7 @@ app.get('/relatorios', function (request, response) {
 	response.end();
 });
 
-// http://localhost:3000/home
+// http://localhost:3000/busca
 app.get('/busca', function (request, response) {
 	// If the user is loggedin
 	if (request.session.loggedin) {
